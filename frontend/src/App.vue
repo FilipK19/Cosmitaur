@@ -1,7 +1,10 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/aboutCosmitaur">About Cosmitaur</router-link> |
+    <router-link to="/recentVideos">Recent Videos</router-link> |
+    <router-link to="/aboutAOR">About AOR</router-link> |
+    <router-link to="/aboutWOWs">About WOWs</router-link> |
   </nav>
   <router-view/>
 </template>
