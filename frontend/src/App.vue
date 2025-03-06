@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <img src="@/assets/logo.jpg" class="logo">
+    <img src="@/assets/logo.jpg" class="mlogo">
     <router-link to="/">Home</router-link> |
     <router-link to="/aboutCosmitaur">About Cosmitaur</router-link> |
     <router-link to="/recentVideos">Recent Videos</router-link> |
@@ -30,7 +30,7 @@ nav a {
   color: #2c3e50;
 }
 
-.logo {
+.mlogo {
   width: 40px;
   height: 40px;
 }
