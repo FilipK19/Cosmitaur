@@ -10,13 +10,13 @@
       </a>
     </div>
     <div class="more1">
-      <h2>Learn more --></h2>
+      <p>Learn more →</p>
       <img src="@/assets/logo.jpg" class="logom">
     </div>
-    <div class="more2">
-      <h2>Learn more --></h2>
-      <img src="@/assets/logo.jpg" class="logom">
-    </div>
+    More info ↓
+  </div>
+  <div class="second-background">
+    <h2>Cosmitaur videos</h2>
   </div>
 </template>
 
@@ -48,13 +48,20 @@ export default {
   border-radius: 360px;
 }
 
-h1 {
+h1, h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 130px;
   font-style: italic;
-  font-weight: 200;
+}
+
+h1 {
+  font-size: 130px;
   margin-top: -180px;
   margin-left: 450px;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 100px;
 }
 
 .video-thumbnail img {
@@ -78,6 +85,7 @@ h1 {
   margin-top: -150px;
   margin-left: 1100px;
   align-items: center;
+  font-size: 25px;
 }
 
 .logom {
@@ -92,6 +100,15 @@ body {
 
 .top-half-background {
   background-image: url('@/assets/background1.png');
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh; /* Only covers the top half of the viewport */
+  width: 100%;
+}
+
+.second-background {
+  background-image: url('@/assets/background2.png');
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
