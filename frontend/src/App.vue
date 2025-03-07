@@ -24,7 +24,7 @@ nav {
   background-color: #ffffff;
   width: 100%;
   z-index: 1000;
-  top: 0; /* Ensure it stays at the top */
+  top: 0;
   left: 0;
   right: 0;
 }
