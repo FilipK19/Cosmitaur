@@ -1,5 +1,5 @@
 <template>
-  <div class="top-half-background">
+  <div class="background" id="section1">
     <div class="home">
       <img src="@/assets/logo.jpg" class="logo">
       <h1>Cosmitaur</h1>
@@ -15,8 +15,14 @@
     </div>
     More info ↓
   </div>
-  <div class="second-background">
+  <div class="background" id="section2">
     <h2>Cosmitaur videos</h2>
+  </div>
+  <div class="background" id="section3">
+    <h2>Academy of revenge</h2>
+  </div>
+  <div class="background" id="section4">
+    <h2>Academy of revenge</h2>
   </div>
 </template>
 
@@ -62,6 +68,9 @@ h1 {
 
 h2 {
   font-size: 100px;
+  font-weight: 100;
+  margin: 0;
+  margin-top: 100px;
 }
 
 .video-thumbnail img {
@@ -98,13 +107,14 @@ body {
   padding: 0;
 }
 
-.top-half-background {
+.background {
   background-image: url('@/assets/background1.png');
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh; /* Only covers the top half of the viewport */
   width: 100%;
+  position: absolute;
 }
 
 .second-background {
@@ -114,5 +124,25 @@ body {
   background-attachment: fixed;
   height: 100vh; /* Only covers the top half of the viewport */
   width: 100%;
+  position: absolute;
+}
+
+#section1 {
+  background-image: url('@/assets/background1.png');
+}
+
+#section2 {
+  background-image: url('@/assets/background2.png');
+  top: 100vh;
+}
+
+#section3 {
+  background-image: url('@/assets/background3.png');
+  top: 200vh;
+}
+
+#section4 {
+  background-image: url('@/assets/background3.png');
+  top: 300vh;
 }
 </style>

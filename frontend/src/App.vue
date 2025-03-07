@@ -23,6 +23,10 @@ nav {
   gap: 30px;
   background-color: #ffffff;
   width: 100%;
+  z-index: 1000;
+  top: 0; /* Ensure it stays at the top */
+  left: 0;
+  right: 0;
 }
 
 nav a {
