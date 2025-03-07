@@ -1,16 +1,22 @@
 <template>
-  <div class="home">
-    <img src="@/assets/logo.jpg" class="logo">
-    <h1>Cosmitaur</h1>
-  </div>
-  <div class="video-thumbnail">
-    <a :href="youtubelink" target="_blank">
-      <img :src="thumbnailUrl" :alt="videoTitle" />
-    </a>
-  </div>
-  <div class="more1">
-    <h2>Learn more --></h2>
-    <img src="@/assets/logo.jpg" class="logom">
+  <div class="top-half-background">
+    <div class="home">
+      <img src="@/assets/logo.jpg" class="logo">
+      <h1>Cosmitaur</h1>
+    </div>
+    <div class="video-thumbnail">
+      <a :href="youtubelink" target="_blank">
+        <img :src="thumbnailUrl" :alt="videoTitle" />
+      </a>
+    </div>
+    <div class="more1">
+      <h2>Learn more --></h2>
+      <img src="@/assets/logo.jpg" class="logom">
+    </div>
+    <div class="more2">
+      <h2>Learn more --></h2>
+      <img src="@/assets/logo.jpg" class="logom">
+    </div>
   </div>
 </template>
 
@@ -37,16 +43,18 @@ export default {
 .logo {
   width: 200px;
   height: 200px;
-  margin-top: 10px;
+  margin-top: 80px;
   margin-right: 1000px;
+  border-radius: 360px;
 }
 
 h1 {
-  font-size: 120px;
+  font-family: "Poppins", sans-serif;
+  font-size: 130px;
   font-style: italic;
-  font-weight: 100;
-  margin-top: -160px;
-  margin-left: 500px;
+  font-weight: 200;
+  margin-top: -180px;
+  margin-left: 450px;
 }
 
 .video-thumbnail img {
@@ -55,7 +63,7 @@ h1 {
   max-width: 500px;
   max-height: 250px;
   margin-right: 800px;
-  margin-top: 50px;
+  margin-top: 10px;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.5s ease;
@@ -73,7 +81,21 @@ h1 {
 }
 
 .logom {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top-half-background {
+  background-image: url('@/assets/background1.png');
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh; /* Only covers the top half of the viewport */
+  width: 100%;
 }
 </style>
