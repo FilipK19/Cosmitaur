@@ -154,7 +154,7 @@ h2 {
 .thumb1 img {
   max-width: 500px;
   max-height: 250px;
-  margin-right: 800px;
+  margin-right: 1000px;
   margin-top: 100px;
 }
 
