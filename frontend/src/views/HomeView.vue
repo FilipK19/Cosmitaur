@@ -5,6 +5,7 @@
       <h1>Cosmitaur</h1>
     </div>
     <div class="video-thumbnail thumb1">
+      <p class="video-label label1">New video:</p>
       <a :href="youtubelink" target="_blank">
         <img :src="thumbnailUrl" :alt="videoTitle" />
       </a>
@@ -19,16 +20,19 @@
     <h2>Cosmitaur videos</h2>
     <div class="grid">
       <div class="video-thumbnail thumbm thumb2">
+        <p class="video-label label2">Gaming:</p>
         <a :href="youtubelink2" target="_blank">
           <img :src="thumbnailUrl2" :alt="videoTitle" />
         </a>
       </div>
       <div class="video-thumbnail thumbm thumb3">
+        <p class="video-label label2">Funny moments:</p>
         <a :href="youtubelink3" target="_blank">
           <img :src="thumbnailUrl3" :alt="videoTitle" />
         </a>
       </div>
       <div class="video-thumbnail thumbm thumb4">
+        <p class="video-label label2 label4">Space:</p>
         <a :href="youtubelink4" target="_blank">
           <img :src="thumbnailUrl4" :alt="videoTitle" />
         </a>
@@ -121,6 +125,30 @@ h2 {
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.video-label {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: absolute;
+}
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+.label1 {
+  top: 30px;
+}
+
+.label2 {
+  left: 260px;
+  top: 10px;
+}
+
+.label4 {
+  top: 30px;
 }
 
 .thumb1 img {
