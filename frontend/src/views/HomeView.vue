@@ -24,13 +24,13 @@
         </a>
       </div>
       <div class="video-thumbnail thumbm thumb3">
-        <a :href="youtubelink2" target="_blank">
-          <img :src="thumbnailUrl" :alt="videoTitle" />
+        <a :href="youtubelink3" target="_blank">
+          <img :src="thumbnailUrl3" :alt="videoTitle" />
         </a>
       </div>
       <div class="video-thumbnail thumbm thumb4">
-        <a :href="youtubelink2" target="_blank">
-          <img :src="thumbnailUrl2" :alt="videoTitle" />
+        <a :href="youtubelink4" target="_blank">
+          <img :src="thumbnailUrl4" :alt="videoTitle" />
         </a>
       </div>
       <div class="more more2">
@@ -53,6 +53,8 @@ export default {
     return {
       videoId: "1weAWiePcsQ",
       videoId2: "GtUaeNQCqmM",
+      videoId3: "dSlxRQ_u8RE",
+      videoId4: "PQfkvC6RASA",
       videoTitle: "A map of all steam users… Part 3"
     }
   },
@@ -63,11 +65,23 @@ export default {
     youtubelink2() {
       return `https://www.youtube.com/watch?v=${this.videoId2}`
     },
+    youtubelink3() {
+      return `https://www.youtube.com/watch?v=${this.videoId3}`
+    },
+    youtubelink4() {
+      return `https://www.youtube.com/watch?v=${this.videoId4}`
+    },
     thumbnailUrl() {
       return `https://img.youtube.com/vi/${this.videoId}/hqdefault.jpg`
     },
     thumbnailUrl2() {
       return `https://img.youtube.com/vi/${this.videoId2}/hqdefault.jpg`
+    },
+    thumbnailUrl3() {
+      return `https://img.youtube.com/vi/${this.videoId3}/hqdefault.jpg`
+    },
+    thumbnailUrl4() {
+      return `https://img.youtube.com/vi/${this.videoId4}/hqdefault.jpg`
     }
   }
 }
@@ -113,7 +127,7 @@ h2 {
   max-width: 500px;
   max-height: 250px;
   margin-right: 800px;
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .thumbm img {
@@ -151,7 +165,7 @@ h2 {
 
 .more1 {
   margin-top: -150px;
-  margin-left: 1100px;
+  margin-left: 1200px;
 }
 
 .more2 {
