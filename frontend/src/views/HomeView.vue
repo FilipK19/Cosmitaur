@@ -4,12 +4,12 @@
       <img src="@/assets/logo.jpg" class="logo">
       <h1>Cosmitaur</h1>
     </div>
-    <div class="video-thumbnail">
+    <div class="video-thumbnail thumb1">
       <a :href="youtubelink" target="_blank">
         <img :src="thumbnailUrl" :alt="videoTitle" />
       </a>
     </div>
-    <div class="more1">
+    <div class="more more1">
       <p>Learn more →</p>
       <img src="@/assets/logo.jpg" class="logom">
     </div>
@@ -17,12 +17,33 @@
   </div>
   <div class="background" id="section2">
     <h2>Cosmitaur videos</h2>
+    <div class="grid">
+      <div class="video-thumbnail thumbm thumb2">
+        <a :href="youtubelink2" target="_blank">
+          <img :src="thumbnailUrl2" :alt="videoTitle" />
+        </a>
+      </div>
+      <div class="video-thumbnail thumbm thumb3">
+        <a :href="youtubelink2" target="_blank">
+          <img :src="thumbnailUrl" :alt="videoTitle" />
+        </a>
+      </div>
+      <div class="video-thumbnail thumbm thumb4">
+        <a :href="youtubelink2" target="_blank">
+          <img :src="thumbnailUrl2" :alt="videoTitle" />
+        </a>
+      </div>
+      <div class="more more2">
+        <p>Learn more →</p>
+        <img src="@/assets/logo.jpg" class="logom">
+      </div>
+    </div>
   </div>
   <div class="background" id="section3">
-    <h2>Academy of revenge</h2>
+    <h3>Academy of revenge</h3>
   </div>
   <div class="background" id="section4">
-    <h2>Academy of revenge</h2>
+    <h4>Academy of revenge</h4>
   </div>
 </template>
 
@@ -31,6 +52,7 @@ export default {
   data () {
     return {
       videoId: "1weAWiePcsQ",
+      videoId2: "GtUaeNQCqmM",
       videoTitle: "A map of all steam users… Part 3"
     }
   },
@@ -38,8 +60,14 @@ export default {
     youtubelink() {
       return `https://www.youtube.com/watch?v=${this.videoId}`
     },
+    youtubelink2() {
+      return `https://www.youtube.com/watch?v=${this.videoId2}`
+    },
     thumbnailUrl() {
       return `https://img.youtube.com/vi/${this.videoId}/hqdefault.jpg`
+    },
+    thumbnailUrl2() {
+      return `https://img.youtube.com/vi/${this.videoId2}/hqdefault.jpg`
     }
   }
 }
@@ -67,34 +95,68 @@ h1 {
 }
 
 h2 {
-  font-size: 100px;
+  font-size: 70px;
   font-weight: 100;
   margin: 0;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .video-thumbnail img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.thumb1 img {
   max-width: 500px;
   max-height: 250px;
   margin-right: 800px;
   margin-top: 10px;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+}
+
+.thumbm img {
+  max-width: 320px;
+  max-height: 170px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.thumb2 img {
+  margin-top: 80px;
+}
+
+.thumb3 img {
+  margin-top: 80px;
+}
+
+.thumb4 img {
+  margin-top: 100px;
 }
 
 .video-thumbnail img:hover {
   transform: scale(1.05);
 }
 
-.more1 {
+.more {
   display: flex;
-  margin-top: -150px;
-  margin-left: 1100px;
   align-items: center;
   font-size: 25px;
+}
+
+.more1 {
+  margin-top: -150px;
+  margin-left: 1100px;
+}
+
+.more2 {
+  margin-top: 140px;
+  margin-left: 300px;
 }
 
 .logom {
@@ -109,16 +171,6 @@ body {
 
 .background {
   background-image: url('@/assets/background1.png');
-  background-position: top center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh; /* Only covers the top half of the viewport */
-  width: 100%;
-  position: absolute;
-}
-
-.second-background {
-  background-image: url('@/assets/background2.png');
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
