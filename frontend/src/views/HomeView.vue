@@ -44,7 +44,28 @@
     </div>
   </div>
   <div class="background" id="section3">
-    <h3>Academy of revenge</h3>
+    <div class="home2">
+      <img src="@/assets/logo2.jpg" class="logo">
+      <h3>Academy of Revenge</h3>
+    </div>
+  <div class="grid2">
+    <div class="info">
+      <p>- Leading WOWs clan</p>
+      <p>- Friendly members</p>
+      <p>- Weekly clan battles</p>
+      <p>- Welcoming members</p>
+    </div>
+    <div class="info2">
+      <div class="more more3 more4">
+          <p>Learn more →</p>
+          <img src="@/assets/logo2.jpg" class="logom">
+      </div>
+      <div class="more more3">
+          <p>Join the community →</p>
+          <img src="@/assets/logo3.jpg" class="logom logom2">
+      </div>
+    </div>
+  </div>
   </div>
   <div class="background" id="section4">
     <h4>Academy of revenge</h4>
@@ -100,12 +121,12 @@ export default {
   border-radius: 360px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: "Poppins", sans-serif;
   font-style: italic;
 }
 
-h1 {
+h1, h3 {
   font-size: 130px;
   margin-top: -180px;
   margin-left: 450px;
@@ -117,6 +138,11 @@ h2 {
   font-weight: 100;
   margin: 0;
   margin-top: 75px;
+}
+
+h3 {
+  font-size: 80px;
+  margin-top: -140px;
 }
 
 .video-thumbnail img {
@@ -169,6 +195,11 @@ h2 {
   grid-template-rows: repeat(2, 1fr);
 }
 
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .thumb2 img {
   margin-top: 80px;
 }
@@ -201,9 +232,22 @@ h2 {
   margin-left: 300px;
 }
 
+.more3 {
+  margin-left: 200px;
+  margin-top: 50px;
+}
+
+.more4 {
+  padding-left: 80px;
+}
+
 .logom {
   width: 140px;
   height: 140px;
+}
+
+.logom2 {
+  width: 220px;
 }
 
 body {
@@ -238,5 +282,15 @@ body {
 #section4 {
   background-image: url('@/assets/background3.png');
   top: 300vh;
+}
+
+.home2 {
+  margin-top: 30px;
+}
+
+.info {
+  margin-right: 200px;
+  margin-top: 100px;
+  font-size: 28px;
 }
 </style>
