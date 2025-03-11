@@ -1,7 +1,7 @@
 <template>
   <div class="background" id="section1">
     <div class="home">
-      <img src="@/assets/logo.jpg" class="logo">
+      <img src="@/assets/logo.jpg" class="logo logo1">
       <h1>Cosmitaur</h1>
     </div>
     <div class="video-thumbnail thumb1">
@@ -45,7 +45,7 @@
   </div>
   <div class="background" id="section3">
     <div class="home2">
-      <img src="@/assets/logo2.jpg" class="logo">
+      <img src="@/assets/logo2.jpg" class="logo logo1">
       <h3>Academy of Revenge</h3>
     </div>
   <div class="grid2">
@@ -93,6 +93,13 @@
     </div>
   </div>
   </div>
+  <div class="background" id="section5">
+    <h5>Contact us</h5>
+    <div class="home3">
+      <img src="@/assets/logo.jpg" class="logo logo2">
+      <img src="@/assets/logo2.jpg" class="logo logo2">
+    </div>
+  </div>
 </template>
 
 <script>
@@ -139,12 +146,15 @@ export default {
 .logo {
   width: 200px;
   height: 200px;
-  margin-top: 80px;
-  margin-right: 1000px;
-  border-radius: 360px;
+  border-radius: 50%;
 }
 
-h1, h2, h3, h4 {
+.logo1 {
+  margin-top: 80px;
+  margin-right: 1000px;
+}
+
+h1, h2, h3, h4, h5 {
   font-family: "Poppins", sans-serif;
   font-style: italic;
 }
@@ -172,6 +182,12 @@ h4 {
   font-size: 80px;
   margin-top: 100px;
   font-weight: 200;
+}
+
+h5 {
+  font-weight: 100;
+  font-size: 70px;
+  margin-right: 1000px;
 }
 
 .video-thumbnail img {
@@ -231,6 +247,14 @@ h4 {
 
 .grid3{
   margin-top: -20px;
+}
+
+.home3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 700px;
+  margin-left: 900px;
+  margin-top: -250px;
 }
 
 .thumb2 img {
@@ -319,6 +343,11 @@ body {
 #section4 {
   background-image: url('@/assets/background3.png');
   top: 300vh;
+}
+
+#section5 {
+  background-image: url('@/assets/background4.png');
+  top: 400vh;
 }
 
 .home2 {
