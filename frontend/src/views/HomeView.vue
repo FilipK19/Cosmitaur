@@ -55,7 +55,7 @@
       <p>- Weekly clan battles</p>
       <p>- Welcoming members</p>
     </div>
-    <div class="info2">
+    <div>
       <div class="more more3 more4">
           <p>Learn more →</p>
           <img src="@/assets/logo2.jpg" class="logom">
@@ -68,7 +68,30 @@
   </div>
   </div>
   <div class="background" id="section4">
-    <h4>Academy of revenge</h4>
+    <h4>World of Warships</h4>
+    <div class="grid2 grid3">
+      <div class="info2">
+        <div class="info">
+          <p>- Sail the high seas</p>
+          <p>- Battle with legendary warships</p>
+          <p>- Command the sea</p>
+        </div>
+        <div class="more more3">
+            <p>Clan stats →</p>
+            <img src="@/assets/logo6.jpg" class="logom">
+        </div>
+      </div>
+    <div class="extra">
+      <div class="more more3 more5">
+          <p>Learn more →</p>
+          <img src="@/assets/logo4.jpg" class="logom">
+      </div>
+      <div class="more more3">
+          <p>WOWs the game →</p>
+          <img src="@/assets/logo5.jpg" class="logom logom2">
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -121,7 +144,7 @@ export default {
   border-radius: 360px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: "Poppins", sans-serif;
   font-style: italic;
 }
@@ -143,6 +166,12 @@ h2 {
 h3 {
   font-size: 80px;
   margin-top: -140px;
+}
+
+h4 {
+  font-size: 80px;
+  margin-top: 100px;
+  font-weight: 200;
 }
 
 .video-thumbnail img {
@@ -200,6 +229,10 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid3{
+  margin-top: -20px;
+}
+
 .thumb2 img {
   margin-top: 80px;
 }
@@ -239,6 +272,10 @@ h3 {
 
 .more4 {
   padding-left: 80px;
+}
+
+.more5 {
+  padding-left: 55px;
 }
 
 .logom {
@@ -289,8 +326,23 @@ body {
 }
 
 .info {
-  margin-right: 200px;
+  padding-left: 200px;
   margin-top: 100px;
   font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.info2 {
+  margin-top: -50px;
+}
+
+p {
+  margin: 14px; /* Removes default margin */
+}
+
+.extra {
+  margin-top: 30px;
 }
 </style>
