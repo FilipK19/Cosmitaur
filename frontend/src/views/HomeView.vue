@@ -99,6 +99,20 @@
       <img src="@/assets/logo.jpg" class="logo logo2">
       <img src="@/assets/logo2.jpg" class="logo logo2">
     </div>
+    <div class="contact">
+      <div class="container">
+        <label for="nameInput" class="tlabel">Name:</label>
+        <input type="text" id="nameInput" v-model="name" class="tbox" />
+      </div>
+      <div class="container">
+        <label for="emailInput" class="tlabel">email:</label>
+        <input type="text" id="emailInput" v-model="email" class="tbox" />
+      </div>
+      <div class="container">
+        <label for="messageInput" class="tlabel">Message:</label>
+        <input type="text" id="messageInput" v-model="message" class="tbox tbox3" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -374,4 +388,33 @@ p {
 .extra {
   margin-top: 30px;
 }
+
+.contact {
+  margin-right: 1500px;
+  padding-left: 150px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.tlabel {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.tbox {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 400px;
+  height: 25px;
+}
+
+.tbox3 {
+  height: 150px;
+}
+
 </style>
