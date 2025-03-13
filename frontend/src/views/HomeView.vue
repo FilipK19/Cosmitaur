@@ -338,6 +338,7 @@ body {
   height: 100vh; /* Only covers the top half of the viewport */
   width: 100%;
   position: absolute;
+  background-attachment: scroll; /* Change from fixed to scroll */
 }
 
 #section1 {

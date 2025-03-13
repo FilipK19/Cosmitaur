@@ -21,7 +21,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7); /* Fully transparent */
   width: 100%;
   z-index: 1000;
   top: 0;
@@ -38,5 +38,6 @@ nav a {
 .mlogo {
   width: 40px;
   height: 40px;
+  border-radius: 360%;
 }
 </style>
