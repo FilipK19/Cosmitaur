@@ -6,13 +6,15 @@
     </div>
     <div class="video-thumbnail thumb1">
       <p class="video-label label1">New video:</p>
-      <a :href="youtubelink" target="_blank">
+      <a :href="youtubelink" target="_blank" class="link">
         <img :src="thumbnailUrl" :alt="videoTitle" />
       </a>
     </div>
     <div class="more more1">
       <p>Learn more →</p>
-      <img src="@/assets/logo.jpg" class="logom">
+      <router-link to="/aboutCosmitaur">
+        <img src="@/assets/logo.jpg" class="logom">
+      </router-link>
     </div>
     More info ↓
   </div>
@@ -212,6 +214,10 @@ h5 {
   transition: transform 0.5s ease;
 }
 
+.link {
+  margin-right: 1000px;
+}
+
 .video-label {
   font-size: 28px;
   font-weight: bold;
@@ -239,7 +245,6 @@ h5 {
 .thumb1 img {
   max-width: 500px;
   max-height: 250px;
-  margin-right: 1000px;
   margin-top: 100px;
 }
 
