@@ -4,9 +4,9 @@
   <div class="text">
     <div v-html="aboutCosmitaur"></div>
   </div>
-  <div class="more more1 moreac">
+  <div class="more moreac">
       <p>Subscribe →</p>
-      <img src="@/assets/logo.jpg" class="logom logomac">
+      <img src="@/assets/logo.jpg" class="logomac">
     </div>
   </div>
 </template>
@@ -28,7 +28,6 @@ export default {
   background-image: url('@/assets/bar1.jpg');
   background-position: top center;
   background-size: cover;
-  background-attachment: fixed;
   height: 40vh;
   width: 100%;
   position: absolute;
@@ -36,29 +35,32 @@ export default {
 }
 
 .text {
-  max-width: 1300px;
-  margin: 100px auto 20px auto;
-  font-size: 25px;
+  max-width: 80%;
+  margin: 12vh auto 2vh auto;
+  font-size: 1.6rem;
   line-height: 1.6;
   text-align: left;
 }
 
 .text p {
-  margin-bottom: 25px;
+  margin-bottom: 4vh;
   text-align: justify;
 }
 
 .moreac {
-  margin-top: 100px;
-  padding-bottom: 100px;
+  margin-top: 15vh;
+  padding-bottom: 15vh;
+  margin-left: 160vh;
 }
 
 .logomac {
   border: 1px solid black;
+  max-width: 120px;
+  height: auto;
 }
 
 .logoac {
-  margin-right: 1200px;
-  margin-top: 60px;
+  margin-right: 155vh;
+  margin-top: 8vh;
 }
 </style>
