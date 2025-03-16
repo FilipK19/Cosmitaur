@@ -296,6 +296,8 @@ h5 {
   display: flex;
   align-items: center;
   font-size: 25px;
+  position: relative;
+  z-index: 10;
 }
 
 .more1 {
