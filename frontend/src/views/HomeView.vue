@@ -41,7 +41,9 @@
       </div>
       <div class="more more2">
         <p>Learn more →</p>
-        <img src="@/assets/logo.jpg" class="logom">
+        <router-link to="/recentVideos">
+          <img src="@/assets/logo.jpg" class="logom">
+        </router-link>
       </div>
     </div>
   </div>
@@ -60,11 +62,15 @@
     <div>
       <div class="more more3 more4">
           <p>Learn more →</p>
-          <img src="@/assets/logo2.jpg" class="logom">
+          <router-link to="/aboutAOR">
+            <img src="@/assets/logo2.jpg" class="logom">
+          </router-link>
       </div>
       <div class="more more3">
           <p>Join the community →</p>
-          <img src="@/assets/logo3.jpg" class="logom logom2">
+          <a href="https://discord.com/invite/3QqPtfW">
+            <img src="@/assets/logo3.jpg" class="logom logom2">
+          </a>
       </div>
     </div>
   </div>
@@ -86,11 +92,15 @@
     <div class="extra">
       <div class="more more3 more5">
           <p>Learn more →</p>
-          <img src="@/assets/logo4.jpg" class="logom">
+          <router-link to="/aboutCosmitaur">
+            <img src="@/assets/logo4.jpg" class="logom">
+          </router-link>
       </div>
       <div class="more more3">
           <p>WOWs the game →</p>
-          <img src="@/assets/logo5.jpg" class="logom logom2">
+          <a href="https://worldofwarships.eu/">
+            <img src="@/assets/logo5.jpg" class="logom logom2">
+          </a>
       </div>
     </div>
   </div>

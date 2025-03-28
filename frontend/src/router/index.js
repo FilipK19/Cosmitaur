@@ -38,4 +38,12 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {  //ensures new routs open at their top
+  if (!to.hash) {
+      window.scrollTo(0, 0);
+  }
+
+  next();
+});
+
 export default router
