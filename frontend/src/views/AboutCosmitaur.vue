@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="aboutC">
     <img src="@/assets/logo.jpg" class="logo logo1 logoac">
   <div class="text">
     <div v-html="aboutCosmitaur"></div>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-.about {
+.aboutC {
   background-image: url('@/assets/bar1.jpg');
   background-position: top center;
   background-size: cover;
@@ -50,7 +50,7 @@ export default {
 .moreac {
   margin-top: 15vh;
   padding-bottom: 15vh;
-  margin-left: 160vh;
+  margin-left: 155vh;
 }
 
 .logomac {
