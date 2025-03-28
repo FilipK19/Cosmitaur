@@ -7,7 +7,7 @@
     <div class="info">
       <p>- Gaming videos, WOWs, GTA, Minecraft...</p>
       <p>- Funny videos</p>
-      <p>- Space videos</p>
+      <p>- Space videos</p> 
     </div>
   </div>
   </template>
