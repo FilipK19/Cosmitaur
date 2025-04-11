@@ -307,7 +307,7 @@ h5 {
   align-items: center;
   font-size: 25px;
   position: relative;
-  z-index: 10;
+  z-index: 10; /*stack on top */
 }
 
 .more1 {
@@ -348,7 +348,6 @@ body {
 }
 
 .background {
-  background-image: url('@/assets/background1.png');
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
