@@ -150,6 +150,10 @@ export default {
 </script>
 
 <style>
+body {
+  overflow-x: hidden; /* Hide scrollbars */
+}
+
 .video-thumbnail img {
   width: 100%;
   height: 100%;
@@ -167,7 +171,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 200px);
   margin-bottom: 150px;
-  overflow-x: hidden;
 }
 
 .gridrv-v {
