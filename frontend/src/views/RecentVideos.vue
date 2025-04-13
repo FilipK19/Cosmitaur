@@ -168,6 +168,7 @@ body {
 }
 
 .gridrv {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(2, 200px);
   margin-bottom: 150px;
@@ -185,8 +186,8 @@ p1 {
 }
 
 .recent_videos {
-  margin-top: 100px;
   padding-bottom: 300px;
+  background-color: #dddddd;
 }
 
 #section2-rv {
