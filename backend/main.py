@@ -5,7 +5,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or specify your frontend URL
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -27,9 +27,14 @@ urldict = {
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/url/{item_id}")
-async def read_item(item_id: str):
-    if item_id in urldict:
-        return {"item_id": item_id, "url": urldict[item_id]}
+@app.get("/url/{url_id}")
+async def read_item(url_id: str):
+    if url_id in urldict:
+        return {"item_id": url_id, "url": urldict[url_id]}
     else:
         raise HTTPException(status_code=404, detail="Item not found")
+    
+
+@app.get("/url")
+async def return_url():
+    return {"urls": urldict}

@@ -13,60 +13,15 @@
   <div class="background recent_videos" id="section2-rv">
     <div class="gridrv">
       <p1>Gaming:</p1>
+      <p1>Gaming:</p1>
+      <p1>Gaming:</p1>
       <div class="gridrv-v">
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink" target="_blank" class="link">
-            <img :src="thumbnailUrl" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink2" target="_blank" class="link">
-            <img :src="thumbnailUrl2" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink3" target="_blank" class="link">
-            <img :src="thumbnailUrl3" :alt="videoTitle" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="gridrv">
-      <p1>Funny:</p1>
-      <div class="gridrv-v">
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink4" target="_blank" class="link">
-            <img :src="thumbnailUrl4" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink5" target="_blank" class="link">
-            <img :src="thumbnailUrl5" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink6" target="_blank" class="link">
-            <img :src="thumbnailUrl6" :alt="videoTitle" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="gridrv">
-      <p1>Space:</p1>
-      <div class="gridrv-v">
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink7" target="_blank" class="link">
-            <img :src="thumbnailUrl7" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink8" target="_blank" class="link">
-            <img :src="thumbnailUrl8" :alt="videoTitle" />
-          </a>
-        </div>
-        <div class="video-thumbnail thumb_rv">
-          <a :href="youtubelink9" target="_blank" class="link">
-            <img :src="thumbnailUrl9" :alt="videoTitle" />
+        <div 
+          v-for="(video, index) in videos" 
+          :key="index" 
+          class="video-thumbnail thumb_rv">
+          <a :href="video.link" target="_blank" class="link">
+          <img :src="video.thumbnail" :alt="'Video ' + video.id" />
           </a>
         </div>
       </div>
@@ -78,73 +33,39 @@
 export default {
   data () {
     return {
-      videoId: "q_TG6vNJPJE",
-      videoId2: "FAB1xEe1A1c",
-      videoId3: "4BpSUmOVr_4",
-      videoId4: "dSlxRQ_u8RE",
-      videoId5: "pe9OQaaiqNI",
-      videoId6: "enQrOaZLC70",
-      videoId7: "PQfkvC6RASA",
-      videoId8: "GtUaeNQCqmM",
-      videoId9: "QNv2aCh7MHc",
+      videos: [],
       videoTitle: "A map of all steam users… Part 3"
+    };
+  },
+  methods: {
+    async fetchUrls() {
+      try {
+        const response = await fetch('http://localhost:8000/url');
+        const data = await response.json();
+        
+        if (data.urls) {
+          // Transform the object into an array of video objects
+          this.videos = Object.keys(data.urls).map((key) => {
+            const videoId = data.urls[key]; // videoId like "q_TG6vNJPJE"
+            const videoLink = `https://www.youtube.com/watch?v=${videoId}`; // Construct YouTube URL
+            const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; // Construct thumbnail URL
+
+            return {
+              id: videoId,
+              link: videoLink,
+              thumbnail: thumbnail
+            };
+          });
+        } else {
+          console.error('No URLs found in response');
+        }
+      } catch (error) {
+        console.error('Error fetching URLs:', error);
+      }
     }
   },
-  computed: {
-    youtubelink() {
-      return `https://www.youtube.com/watch?v=${this.videoId}`
-    },
-    youtubelink2() {
-      return `https://www.youtube.com/watch?v=${this.videoId2}`
-    },
-    youtubelink3() {
-      return `https://www.youtube.com/watch?v=${this.videoId3}`
-    },
-    youtubelink4() {
-      return `https://www.youtube.com/watch?v=${this.videoId4}`
-    },
-    youtubelink5() {
-      return `https://www.youtube.com/watch?v=${this.videoId5}`
-    },
-    youtubelink6() {
-      return `https://www.youtube.com/watch?v=${this.videoId6}`
-    },
-    youtubelink7() {
-      return `https://www.youtube.com/watch?v=${this.videoId7}`
-    },
-    youtubelink8() {
-      return `https://www.youtube.com/watch?v=${this.videoId8}`
-    },
-    youtubelink9() {
-      return `https://www.youtube.com/watch?v=${this.videoId9}`
-    },
-    thumbnailUrl() {
-      return `https://img.youtube.com/vi/${this.videoId}/hqdefault.jpg`
-    },
-    thumbnailUrl2() {
-      return `https://img.youtube.com/vi/${this.videoId2}/hqdefault.jpg`
-    },
-    thumbnailUrl3() {
-      return `https://img.youtube.com/vi/${this.videoId3}/hqdefault.jpg`
-    },
-    thumbnailUrl4() {
-      return `https://img.youtube.com/vi/${this.videoId4}/hqdefault.jpg`
-    },
-    thumbnailUrl5() {
-      return `https://img.youtube.com/vi/${this.videoId5}/hqdefault.jpg`
-    },
-    thumbnailUrl6() {
-      return `https://img.youtube.com/vi/${this.videoId6}/hqdefault.jpg`
-    },
-    thumbnailUrl7() {
-      return `https://img.youtube.com/vi/${this.videoId7}/hqdefault.jpg`
-    },
-    thumbnailUrl8() {
-      return `https://img.youtube.com/vi/${this.videoId8}/hqdefault.jpg`
-    },
-    thumbnailUrl9() {
-      return `https://img.youtube.com/vi/${this.videoId9}/hqdefault.jpg`
-    }
+  mounted() {
+    this.fetchUrls(); // Fetch URLs when the component is mounted
   }
 }
 </script>
