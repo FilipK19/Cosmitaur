@@ -12,9 +12,11 @@
   </div>
   <div class="background recent_videos" id="section2-rv">
     <div class="gridrv">
-      <p1>Gaming:</p1>
-      <p1>Gaming:</p1>
-      <p1>Gaming:</p1>
+      <div>
+        <p class="v-type">Gaming:</p>
+        <p class="v-type">Funny:</p>
+        <p class="v-type">Space:</p>
+      </div>
       <div class="gridrv-v">
         <div 
           v-for="(video, index) in videos" 
@@ -99,11 +101,13 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 0);
   column-gap: 500px;
+  margin-bottom: 100px;
 }
 
-p1 {
+.v-type {
   font-size: 25px;
-  margin-top: 60px;
+  margin-top: 80px;
+  margin-bottom: 220px;
 }
 
 .recent_videos {
