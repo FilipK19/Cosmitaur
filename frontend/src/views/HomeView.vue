@@ -221,7 +221,14 @@ h5 {
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  filter: brightness(100%);
+  transform: scale(1);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.video-thumbnail img:hover {
+  filter: brightness(50%);
+  transform: scale(1.05);
 }
 
 .link {
@@ -296,10 +303,6 @@ h5 {
 
 .thumb4 img {
   margin-top: 100px;
-}
-
-.video-thumbnail img:hover {
-  transform: scale(1.05);
 }
 
 .more {

@@ -82,7 +82,7 @@ body {
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .thumb_rv img {
