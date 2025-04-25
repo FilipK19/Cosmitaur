@@ -8,7 +8,7 @@
       <p class="video-label label1">New video:</p>
       <a :href="youtubelink" target="_blank" class="link">
         <img :src="thumbnailUrl" :alt="videoTitle" />
-        <span class="caption">{{videoTitle}}</span>
+        <span class="caption cpos_m">{{introTitle}}</span>
       </a>
     </div>
     <div class="more more1">
@@ -137,7 +137,7 @@ export default {
       videoId2: "GtUaeNQCqmM",
       videoId3: "dSlxRQ_u8RE",
       videoId4: "PQfkvC6RASA",
-      videoTitle: "A map of all steam users… Part 3"
+      introTitle: "A map of all steam users… Part 3"
     }
   },
   computed: {
@@ -249,8 +249,10 @@ h5 {
   opacity: 0;
   transition: opacity .5s ease;
   pointer-events: none;
+}
 
-  margin-top: 140px;
+.cpos_m {
+  margin-top: 210px;
   margin-left: 210px;
 }
 

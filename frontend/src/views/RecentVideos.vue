@@ -24,6 +24,7 @@
           class="video-thumbnail thumb_rv">
           <a :href="video.link" target="_blank" class="link">
           <img :src="video.thumbnail" :alt="'Video ' + video.id" />
+          <span class="caption cpos">{{video.title}}</span>
           </a>
         </div>
       </div>
@@ -36,7 +37,6 @@ export default {
   data () {
     return {
       videos: [],
-      videoTitle: "A map of all steam users… Part 3"
     };
   },
   methods: {
@@ -48,14 +48,12 @@ export default {
         if (data.urls) {
           // Transform the object into an array of video objects
           this.videos = Object.keys(data.urls).map((key) => {
-            const videoId = data.urls[key]; // videoId like "q_TG6vNJPJE"
-            const videoLink = `https://www.youtube.com/watch?v=${videoId}`; // Construct YouTube URL
-            const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; // Construct thumbnail URL
-
+            const { id: videoId, title: videoTitle } = data.urls[key];
             return {
               id: videoId,
-              link: videoLink,
-              thumbnail: thumbnail
+              title: videoTitle,
+              link: `https://www.youtube.com/watch?v=${videoId}`,
+              thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
             };
           });
         } else {
@@ -67,7 +65,7 @@ export default {
     }
   },
   mounted() {
-    this.fetchUrls(); // Fetch URLs when the component is mounted
+    this.fetchUrls();
   }
 }
 </script>
@@ -117,5 +115,20 @@ body {
 
 #section2-rv {
   top: 100vh;
+}
+
+.video-thumbnail.thumb_rv,
+.video-thumbnail.thumb_rv .link {
+  position: relative;
+  display: inline-block;
+}
+
+.cpos {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 </style>
