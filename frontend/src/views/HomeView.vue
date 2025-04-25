@@ -8,6 +8,7 @@
       <p class="video-label label1">New video:</p>
       <a :href="youtubelink" target="_blank" class="link">
         <img :src="thumbnailUrl" :alt="videoTitle" />
+        <span class="caption">{{videoTitle}}</span>
       </a>
     </div>
     <div class="more more1">
@@ -231,8 +232,30 @@ h5 {
   transform: scale(1.05);
 }
 
-.link {
-  margin-right: 1000px;
+.video-thumbnail {
+  position: relative;
+}
+
+.video-thumbnail .caption{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  text-shadow: 0 2px 4px rgb(0 0 0 / .6);
+
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+
+  opacity: 0;
+  transition: opacity .5s ease;
+  pointer-events: none;
+
+  margin-top: 140px;
+  margin-left: 210px;
+}
+
+.video-thumbnail .link:hover .caption{
+  opacity: 1;
 }
 
 .video-label {
@@ -241,13 +264,10 @@ h5 {
   padding: 5px 10px;
   position: absolute;
 }
-.video-thumbnail {
-  position: relative;
-  display: inline-block;
-}
 
 .label1 {
   top: 30px;
+  margin-left: 150px;
 }
 
 .label2 {
@@ -263,6 +283,7 @@ h5 {
   max-width: 500px;
   max-height: 250px;
   margin-top: 100px;
+  margin-right: 900px;
 }
 
 .thumbm img {
