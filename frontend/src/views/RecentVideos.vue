@@ -40,7 +40,7 @@ export default {
     };
   },
   methods: {
-    async fetchUrls() {
+    async fetch_rvvideos() {
       try {
         const response = await fetch('http://localhost:8000/rvvideos');
         const data = await response.json();
@@ -57,15 +57,15 @@ export default {
             };
           });
         } else {
-          console.error('No URLs found in response');
+          console.error('No videos found in response');
         }
       } catch (error) {
-        console.error('Error fetching URLs:', error);
+        console.error('Error fetching videos:', error);
       }
     }
   },
   mounted() {
-    this.fetchUrls();
+    this.fetch_rvvideos();
   }
 }
 </script>
@@ -130,5 +130,6 @@ body {
   justify-content: center;
   align-items: center;
   pointer-events: none;
+  font-size: 25px;
 }
 </style>

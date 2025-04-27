@@ -10,19 +10,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-urldict1 = {
-  "videoId1": "q_TG6vNJPJE",
-  "videoId2": "FAB1xEe1A1c",
-  "videoId3": "4BpSUmOVr_4",
-  "videoId4": "dSlxRQ_u8RE",
-  "videoId5": "pe9OQaaiqNI",
-  "videoId6": "enQrOaZLC70",
-  "videoId7": "PQfkvC6RASA",
-  "videoId8": "GtUaeNQCqmM",
-  "videoId9": "QNv2aCh7MHc"
-}
-
 rv_dict = {
     "videoId1": {
         "id": "q_TG6vNJPJE",
@@ -60,7 +47,25 @@ rv_dict = {
         "id": "QNv2aCh7MHc",
         "title": "Simulacija Nuklearne Rakete"
     },
+}
 
+home_dict = {
+    "videoId1": {
+        "id": "1weAWiePcsQ",
+        "title": "A map of all steam users… Part 3"
+    },
+        "videoId2": {
+        "id": "GtUaeNQCqmM",
+        "title": "Space Shuttle Landing - Without Reading The Manual"
+    },
+        "videoId3": {
+        "id": "dSlxRQ_u8RE",
+        "title": "Ivanovo Besnilo (presmješno)"
+    },
+        "videoId4": {
+        "id": "PQfkvC6RASA",
+        "title": "SpaceX Starship - Reentry"
+    },
 }
 
 @app.get("/")
@@ -78,3 +83,7 @@ async def read_item(url_id: str):
 @app.get("/rvvideos")
 async def return_url():
     return {"rv_videos": rv_dict}
+
+@app.get("/homevideos")
+async def return_url():
+    return {"home_videos": home_dict}

@@ -4,11 +4,11 @@
       <img src="@/assets/logo.jpg" class="logo logo1">
       <h1>Cosmitaur</h1>
     </div>
-    <div class="video-thumbnail thumb1">
+    <div v-if="hvideos.videoId1" class="video-thumbnail thumb1">
       <p class="video-label label1">New video:</p>
-      <a :href="youtubelink" target="_blank" class="link">
-        <img :src="thumbnailUrl" :alt="videoTitle" />
-        <span class="caption cpos_m">{{introTitle}}</span>
+      <a :href="hvideos.videoId1.link" target="_blank" class="link">
+        <img :src="hvideos.videoId1.thumbnail"/>
+        <span class="caption cpos_m">{{hvideos.videoId1.title}}</span>
       </a>
     </div>
     <div class="more more1">
@@ -22,22 +22,25 @@
   <div class="background" id="section2">
     <h2>Cosmitaur videos</h2>
     <div class="grid">
-      <div class="video-thumbnail thumbm thumb2">
+      <div v-if="hvideos.videoId2" class="video-thumbnail thumbm thumb2">
         <p class="video-label label2">Gaming:</p>
-        <a :href="youtubelink2" target="_blank">
-          <img :src="thumbnailUrl2" :alt="videoTitle" />
+        <a :href="hvideos.videoId2.link" target="_blank" class="link">
+          <img :src="hvideos.videoId2.thumbnail"/>
+          <span class="caption cpos_cv">{{hvideos.videoId2.title}}</span>
         </a>
       </div>
-      <div class="video-thumbnail thumbm thumb3">
+      <div v-if="hvideos.videoId3" class="video-thumbnail thumbm thumb3">
         <p class="video-label label2">Funny moments:</p>
-        <a :href="youtubelink3" target="_blank">
-          <img :src="thumbnailUrl3" :alt="videoTitle" />
+        <a :href="hvideos.videoId3.link" target="_blank" class="link">
+          <img :src="hvideos.videoId3.thumbnail"/>
+          <span class="caption cpos_cv cpos_cv2">{{hvideos.videoId3.title}}</span>
         </a>
       </div>
-      <div class="video-thumbnail thumbm thumb4">
+      <div v-if="hvideos.videoId4" class="video-thumbnail thumbm thumb4">
         <p class="video-label label2 label4">Space:</p>
-        <a :href="youtubelink4" target="_blank">
-          <img :src="thumbnailUrl4" :alt="videoTitle" />
+        <a :href="hvideos.videoId4.link" target="_blank" class="link">
+          <img :src="hvideos.videoId4.thumbnail"/>
+          <span class="caption cpos_cv cpos_cv3">{{hvideos.videoId4.title}}</span>
         </a>
       </div>
       <div class="more more2">
@@ -133,38 +136,36 @@
 export default {
   data () {
     return {
-      videoId: "1weAWiePcsQ",
-      videoId2: "GtUaeNQCqmM",
-      videoId3: "dSlxRQ_u8RE",
-      videoId4: "PQfkvC6RASA",
-      introTitle: "A map of all steam users… Part 3"
+      hvideos: {},
+    };
+  },
+  methods: {
+    async fetc_homevideos() {
+      try {
+        const response = await fetch('http://localhost:8000/homevideos');
+        const data = await response.json();
+        
+        if (data.home_videos) {
+          // Transform the object into an array of video objects
+          Object.keys(data.home_videos).forEach((key) => {
+            const { id: videoId, title: videoTitle } = data.home_videos[key];
+            this.hvideos[key] = {
+              id: videoId,
+              title: videoTitle,
+              link: `https://www.youtube.com/watch?v=${videoId}`,
+              thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+            };
+          });
+        } else {
+          console.error('No videos found in response');
+        }
+      } catch (error) {
+        console.error('Error fetching URLs:', error);
+      }
     }
   },
-  computed: {
-    youtubelink() {
-      return `https://www.youtube.com/watch?v=${this.videoId}`
-    },
-    youtubelink2() {
-      return `https://www.youtube.com/watch?v=${this.videoId2}`
-    },
-    youtubelink3() {
-      return `https://www.youtube.com/watch?v=${this.videoId3}`
-    },
-    youtubelink4() {
-      return `https://www.youtube.com/watch?v=${this.videoId4}`
-    },
-    thumbnailUrl() {
-      return `https://img.youtube.com/vi/${this.videoId}/hqdefault.jpg`
-    },
-    thumbnailUrl2() {
-      return `https://img.youtube.com/vi/${this.videoId2}/hqdefault.jpg`
-    },
-    thumbnailUrl3() {
-      return `https://img.youtube.com/vi/${this.videoId3}/hqdefault.jpg`
-    },
-    thumbnailUrl4() {
-      return `https://img.youtube.com/vi/${this.videoId4}/hqdefault.jpg`
-    }
+  mounted() {
+    this.fetc_homevideos();
   }
 }
 </script>
@@ -243,7 +244,6 @@ h5 {
   text-shadow: 0 2px 4px rgb(0 0 0 / .6);
 
   color: #fff;
-  font-size: 25px;
   font-weight: 600;
 
   opacity: 0;
@@ -254,6 +254,28 @@ h5 {
 .cpos_m {
   margin-top: 210px;
   margin-left: 210px;
+  font-size: 28px;
+}
+
+.cpos_cv {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  font-size: 20px;
+  margin-top: 50px;
+  max-width: 300px;
+  margin-left: 270px;
+}
+
+.cpos_cv2 {
+  margin-top: 40px;
+}
+
+.cpos_cv3 {
+  margin-top: 80px;
 }
 
 .video-thumbnail .link:hover .caption{
