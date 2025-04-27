@@ -23,7 +23,7 @@ urldict1 = {
   "videoId9": "QNv2aCh7MHc"
 }
 
-urldict = {
+rv_dict = {
     "videoId1": {
         "id": "q_TG6vNJPJE",
         "title": "Train Simulator World - AWVR 777 Unstoppable Train Challenge"
@@ -69,12 +69,12 @@ def read_root():
 
 @app.get("/url/{url_id}")
 async def read_item(url_id: str):
-    if url_id in urldict:
-        return {"item_id": url_id, "url": urldict[url_id]}
+    if url_id in rv_dict:
+        return {"item_id": url_id, "url": rv_dict[url_id]}
     else:
         raise HTTPException(status_code=404, detail="Item not found")
     
 
-@app.get("/url")
+@app.get("/rvvideos")
 async def return_url():
-    return {"urls": urldict}
+    return {"rv_videos": rv_dict}

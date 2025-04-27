@@ -42,13 +42,13 @@ export default {
   methods: {
     async fetchUrls() {
       try {
-        const response = await fetch('http://localhost:8000/url');
+        const response = await fetch('http://localhost:8000/rvvideos');
         const data = await response.json();
         
-        if (data.urls) {
+        if (data.rv_videos) {
           // Transform the object into an array of video objects
-          this.videos = Object.keys(data.urls).map((key) => {
-            const { id: videoId, title: videoTitle } = data.urls[key];
+          this.videos = Object.keys(data.rv_videos).map((key) => {
+            const { id: videoId, title: videoTitle } = data.rv_videos[key];
             return {
               id: videoId,
               title: videoTitle,
