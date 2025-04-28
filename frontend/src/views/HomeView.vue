@@ -1,83 +1,87 @@
 <template>
   <div class="background" id="section1">
+    <AosWrapper> <!--adds scroll animation-->
     <div class="home">
-      <img src="@/assets/logo.jpg" class="logo logo1"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
-      <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">Cosmitaur</h1>
+      <img src="@/assets/logo.jpg" class="logo logo1">
+      <h1>Cosmitaur</h1>
     </div>
-    <div v-if="hvideos.videoId1" class="video-thumbnail thumb1"
-    data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+    </AosWrapper> 
+  <AosWrapper>
+    <div v-if="hvideos.videoId1" class="video-thumbnail thumb1">
       <p class="video-label label1">New video:</p>
       <a :href="hvideos.videoId1.link" target="_blank" class="link">
         <img :src="hvideos.videoId1.thumbnail"/>
         <span class="caption cpos_m">{{hvideos.videoId1.title}}</span>
       </a>
     </div>
-    <div class="more more1" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+    <div class="more more1">
       <p>Learn more →</p>
       <router-link to="/aboutCosmitaur">
         <img src="@/assets/logo.jpg" class="logom">
       </router-link>
     </div>
+  </AosWrapper> 
     More info ↓
   </div>
   <div class="background" id="section2">
-    <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000"
-    >Cosmitaur videos</h2>
+    <AosWrapper>
+      <h2>Cosmitaur videos</h2>
+    </AosWrapper>
+    <AosWrapper>
     <div class="grid">
-      <div v-if="hvideos.videoId2" class="video-thumbnail thumbm thumb2"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div v-if="hvideos.videoId2" class="video-thumbnail thumbm thumb2">
         <p class="video-label label2">Gaming:</p>
         <a :href="hvideos.videoId2.link" target="_blank" class="link">
           <img :src="hvideos.videoId2.thumbnail"/>
           <span class="caption cpos_cv">{{hvideos.videoId2.title}}</span>
         </a>
       </div>
-      <div v-if="hvideos.videoId3" class="video-thumbnail thumbm thumb3"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div v-if="hvideos.videoId3" class="video-thumbnail thumbm thumb3">
         <p class="video-label label2">Funny moments:</p>
         <a :href="hvideos.videoId3.link" target="_blank" class="link">
           <img :src="hvideos.videoId3.thumbnail"/>
           <span class="caption cpos_cv cpos_cv2">{{hvideos.videoId3.title}}</span>
         </a>
       </div>
-      <div v-if="hvideos.videoId4" class="video-thumbnail thumbm thumb4"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div v-if="hvideos.videoId4" class="video-thumbnail thumbm thumb4">
         <p class="video-label label2 label4">Space:</p>
         <a :href="hvideos.videoId4.link" target="_blank" class="link">
           <img :src="hvideos.videoId4.thumbnail"/>
           <span class="caption cpos_cv cpos_cv3">{{hvideos.videoId4.title}}</span>
         </a>
       </div>
-      <div class="more more2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div class="more more2">
         <p>Learn more →</p>
         <router-link to="/recentVideos">
           <img src="@/assets/logo.jpg" class="logom">
         </router-link>
       </div>
     </div>
+    </AosWrapper>
   </div>
   <div class="background" id="section3">
     <div class="home2">
-      <img src="@/assets/logo2.jpg" class="logo logo1"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
-      <h3 data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">Academy of Revenge</h3>
+      <AosWrapper>
+      <img src="@/assets/logo2.jpg" class="logo logo1">
+      <h3>Academy of Revenge</h3>
+      </AosWrapper>
     </div>
+  <AosWrapper>
   <div class="grid2">
-    <div class="info" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+    <div class="info">
       <p>- Leading WOWs clan</p>
       <p>- Friendly members</p>
       <p>- Weekly clan battles</p>
       <p>- Welcoming members</p>
     </div>
     <div>
-      <div class="more more3 more4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div class="more more3 more4">
           <p>Learn more →</p>
           <router-link to="/aboutAOR">
             <img src="@/assets/logo2.jpg" class="logom">
           </router-link>
       </div>
-      <div class="more more3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <div class="more more3">
           <p>Join the community →</p>
           <a href="https://discord.com/invite/3QqPtfW">
             <img src="@/assets/logo3.jpg" class="logom logom2">
@@ -85,31 +89,33 @@
       </div>
     </div>
   </div>
+  </AosWrapper>
   </div>
   <div class="background" id="section4">
-    <h4 data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000"
-    >World of Warships</h4>
+    <AosWrapper>
+    <h4>World of Warships</h4>
+    </AosWrapper>
+    <AosWrapper>
     <div class="grid2 grid3">
-      <div class="info2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+      <div class="info2">
         <div class="info">
           <p>- Sail the high seas</p>
           <p>- Battle with legendary warships</p>
           <p>- Command the sea</p>
         </div>
-        <div class="more more3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+        <div class="more more3">
             <p>Clan stats →</p>
             <img src="@/assets/logo6.jpg" class="logom">
         </div>
       </div>
     <div class="extra">
-      <div class="more more3 more5"
-      data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+      <div class="more more3 more5">
           <p>Learn more →</p>
           <router-link to="/aboutCosmitaur">
             <img src="@/assets/logo4.jpg" class="logom">
           </router-link>
       </div>
-      <div class="more more3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+      <div class="more more3">
           <p>WOWs the game →</p>
           <a href="https://worldofwarships.eu/">
             <img src="@/assets/logo5.jpg" class="logom logom2">
@@ -117,15 +123,18 @@
       </div>
     </div>
   </div>
+  </AosWrapper>
   </div>
   <div class="background" id="section5">
-    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000"
-    >Contact us</h5>
-    <div class="home3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+    <AosWrapper>
+    <h5>Contact us</h5>
+    <div class="home3">
       <img src="@/assets/logo.jpg" class="logo logo2">
       <img src="@/assets/logo2.jpg" class="logo logo2">
     </div>
-    <div class="contact" data-aos="fade-up" data-aos-delay="200" data-aos-duration="8000">
+    </AosWrapper>
+    <AosWrapper>
+    <div class="contact">
       <div class="container">
         <label for="nameInput" class="tlabel">Name:</label>
         <input type="text" id="nameInput" v-model="name" class="tbox" />
@@ -139,11 +148,17 @@
         <input type="text" id="messageInput" v-model="message" class="tbox tbox3" />
       </div>
     </div>
+    </AosWrapper>
   </div>
 </template>
 
 <script>
+import AosWrapper from '@/components/AosWrapper.vue';
+
 export default {
+  components: {
+    AosWrapper,
+  },
   data () {
     return {
       hvideos: {},
@@ -328,7 +343,6 @@ h5 {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
 }
 
 .grid2 {
