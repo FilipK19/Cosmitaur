@@ -386,6 +386,17 @@ h5 {
   height: 140px;
 }
 
+.logom {
+  transform: scale(1);
+  transition: transform 0.5s ease, border-radius 0.5s ease;
+  border-radius: 0;
+}
+
+.logom:hover {
+  transform: scale(1.2);
+  border-radius: 20%;
+}
+
 .logom2 {
   width: 220px;
 }
