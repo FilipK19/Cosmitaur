@@ -16,9 +16,9 @@
     </div>
     <div class="more more1">
       <p>Learn more →</p>
-      <router-link to="/aboutCosmitaur">
+      <a href="https://www.youtube.com/@Cosmitaur">
         <img src="@/assets/logo.jpg" class="logom">
-      </router-link>
+      </a>
     </div>
   </AosWrapper> 
     More info ↓
@@ -105,7 +105,9 @@
         </div>
         <div class="more more3">
             <p>Clan stats →</p>
-            <img src="@/assets/logo6.jpg" class="logom">
+            <a href="https://wows-numbers.com/clan/500162331,AOR-Agency-of-Revenge/">
+              <img src="@/assets/logo6.jpg" class="logom">
+            </a>
         </div>
       </div>
     <div class="extra">
@@ -129,8 +131,12 @@
     <AosWrapper>
     <h5>Contact us</h5>
     <div class="home3">
-      <img src="@/assets/logo.jpg" class="logo logo2">
-      <img src="@/assets/logo2.jpg" class="logo logo2">
+      <a href="https://www.youtube.com/@Cosmitaur">
+        <img src="@/assets/logo.jpg" class="logo logo2">
+      </a>
+      <a href="https://discord.com/invite/3QqPtfW">
+        <img src="@/assets/logo2.jpg" class="logo logo2">
+      </a>
     </div>
     </AosWrapper>
     <AosWrapper>
