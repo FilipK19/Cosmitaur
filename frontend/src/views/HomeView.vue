@@ -132,10 +132,14 @@
     <h5>Contact us</h5>
     <div class="home3">
       <a href="https://www.youtube.com/@Cosmitaur">
-        <img src="@/assets/logo.jpg" class="logo logo2">
+        <div class="elogoAni">
+          <img src="@/assets/logo.jpg" class="logo logo2 elogo_t">
+        </div>
       </a>
       <a href="https://discord.com/invite/3QqPtfW">
-        <img src="@/assets/logo2.jpg" class="logo logo2">
+        <div class="elogoAni">
+          <img src="@/assets/logo2.jpg" class="logo logo2 elogo_t">
+        </div>
       </a>
     </div>
     </AosWrapper>
@@ -523,4 +527,19 @@ p {
   height: 150px;
 }
 
+.elogoAni {
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+.elogo_t {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.elogo_t:hover {
+  transform: scale(1.2);
+}
 </style>
