@@ -133,12 +133,12 @@
     <div class="home3">
       <a href="https://www.youtube.com/@Cosmitaur">
         <div class="elogoAni">
-          <img src="@/assets/logo.jpg" class="logo logo2 elogo_t">
+          <img src="@/assets/logo.jpg" class="logo elogo_t">
         </div>
       </a>
       <a href="https://discord.com/invite/3QqPtfW">
         <div class="elogoAni">
-          <img src="@/assets/logo2.jpg" class="logo logo2 elogo_t">
+          <img src="@/assets/logo2.jpg" class="logo elogo_t">
         </div>
       </a>
     </div>
