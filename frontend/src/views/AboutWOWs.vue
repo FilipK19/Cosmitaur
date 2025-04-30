@@ -1,9 +1,11 @@
 <template>
+  <AosWrapper>
   <div class="aboutW">
     <AosWrapper>
     <img src="@/assets/logo5.jpg" class="logo logo1 logoac">
     </AosWrapper>
   </div>
+</AosWrapper>
   <div class="aboutWT">
     <AosWrapper>
       <div class="text">
