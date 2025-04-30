@@ -1,5 +1,6 @@
 <template>
   <div class="background" id="section1">
+    <AosWrapper>
     <div class="videos">
       <img src="@/assets/logo.jpg" class="logo logo1">
       <h1>Cosmitaur</h1>
@@ -9,23 +10,32 @@
       <p>- Funny videos</p>
       <p>- Space videos</p> 
     </div>
+    </AosWrapper>
   </div>
   <div class="background recent_videos" id="section2-rv">
     <div class="gridrv">
       <div>
-        <p class="v-type">Gaming:</p>
-        <p class="v-type">Funny:</p>
-        <p class="v-type">Space:</p>
+        <AosWrapper>
+          <p class="v-type">Gaming:</p>
+        </AosWrapper>
+        <AosWrapper>
+          <p class="v-type">Funny:</p>
+        </AosWrapper>
+        <AosWrapper>
+          <p class="v-type">Space:</p>
+        </AosWrapper>
       </div>
       <div class="gridrv-v">
         <div 
           v-for="(video, index) in videos" 
           :key="index" 
           class="video-thumbnail thumb_rv">
-          <a :href="video.link" target="_blank" class="link">
-          <img :src="video.thumbnail" :alt="'Video ' + video.id" />
-          <span class="caption cpos">{{video.title}}</span>
-          </a>
+          <AosWrapper>
+            <a :href="video.link" target="_blank" class="link">
+            <img :src="video.thumbnail" :alt="'Video ' + video.id" />
+            <span class="caption cpos">{{video.title}}</span>
+            </a>
+          </AosWrapper>
         </div>
       </div>
     </div>
@@ -33,7 +43,12 @@
   </template>
 
 <script>
+import AosWrapper from '@/components/AosWrapper.vue';
+
 export default {
+  components: {
+    AosWrapper,
+  },
   data () {
     return {
       videos: [],
