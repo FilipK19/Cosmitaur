@@ -18,6 +18,7 @@ npm run serve
 ```
 
 Backend uses FastAPI framework and is run by Uvicorn
+
 Frontend uses VueJS framework and is run by NPM, "npm install" is required to install all needed dependencies for the project to run.
 
 Project uses AI generated backgrounds and template text since this project is only for practice.
