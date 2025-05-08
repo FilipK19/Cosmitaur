@@ -155,8 +155,9 @@
       </div>
       <div class="container">
         <label for="messageInput" class="tlabel">Message:</label>
-        <input type="text" id="messageInput" v-model="message" class="tbox tbox3" />
+        <textarea id="messageInput" v-model="message" class="tbox tbox3"></textarea>
       </div>
+      <button class="button" @click="sendMessage()">Send</button>
     </div>
     </AosWrapper>
   </div>
@@ -196,6 +197,36 @@ export default {
         }
       } catch (error) {
         console.error('Error fetching URLs:', error);
+      }
+    },
+    async sendMessage() {
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+      const message = document.getElementById("messageInput").value;
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:8000/message", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          alert("Message sent successfully!");
+          console.log(result);
+        } else {
+          const error = await response.json();
+          alert("Error: " + JSON.stringify(error.detail || "Unknown error"));
+        }
+      } catch (err) {
+        alert("Failed to send message. Please try again.");
+        console.error(err);
       }
     }
   },
@@ -541,5 +572,19 @@ p {
 
 .elogo_t:hover {
   transform: scale(1.2);
+}
+
+.button {
+  padding: 15px 32px;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-left: 145px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 </style>

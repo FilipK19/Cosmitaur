@@ -124,7 +124,7 @@ body {
 }
 
 .recent_videos {
-  padding-bottom: 300px;
+  padding-bottom: 150px;
   background-color: #f1f1ef;
 }
 

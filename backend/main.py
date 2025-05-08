@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -9,6 +10,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+class Message(BaseModel):
+    name: str
+    email: str
+    message: str
+
+messages = []
+
 
 rv_dict = {
     "videoId1": {
@@ -79,7 +88,6 @@ async def read_item(url_id: str):
     else:
         raise HTTPException(status_code=404, detail="Item not found")
     
-
 @app.get("/rvvideos")
 async def return_url():
     return {"rv_videos": rv_dict}
@@ -87,3 +95,12 @@ async def return_url():
 @app.get("/homevideos")
 async def return_url():
     return {"home_videos": home_dict}
+
+@app.get("/message")
+async def get_message():
+    return {"messages": messages}
+
+@app.post("/message")
+async def submit_message(msg: Message):
+    messages.append(msg.dict())
+    return {"status": "success", "data": msg}
